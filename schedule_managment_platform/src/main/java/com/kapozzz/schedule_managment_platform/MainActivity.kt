@@ -7,13 +7,10 @@ import com.kapozzz.schedule_managment_platform.screens.main.MainScreen
 import com.kapozzz.schedule_managment_platform.screens.main.MainScreenViewModel
 import com.kapozzz.schedule_managment_platform.screens.main.mockArticlesRepository
 import com.kapozzz.schedule_managment_platform.screens.main.mockScheduleRepository
-
 import com.kapozzz.schedule_managment_platform.screens.main.mockSubjectsRepository
-import com.kapozzz.schedule_managment_platform.screens.schedule.ScheduleScreen
 import com.kapozzz.schedule_managment_platform.ui.SchedulerTypography
 import com.kapozzz.schedule_managment_platform.ui.lightPalette
 import com.kapozzz.ui_kit.AppTheme
-
 
 
 class MainActivity : ComponentActivity() {
@@ -25,13 +22,12 @@ class MainActivity : ComponentActivity() {
                 palette = lightPalette,
                 baseTypography = SchedulerTypography
             ) {
-//                val viewModel = MainScreenViewModel(
-//                    mockScheduleRepository,
-//                    mockSubjectsRepository,
-//                    mockArticlesRepository
-//                )
-//                MainScreen(viewModel)
-                ScheduleScreen()
+                val viewModel = MainScreenViewModel(
+                    mockScheduleRepository,
+                    mockSubjectsRepository,
+                    mockArticlesRepository
+                )
+                MainScreen(viewModel)
             }
         }
     }
